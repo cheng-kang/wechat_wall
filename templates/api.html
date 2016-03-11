@@ -1,0 +1,1 @@
+{%set n=total %}{"ret":{% if data.count() is not None %}1{% else %}0{% end %},"data":[{% for item in data %}{"id":{{ item['id'] }},"avatar":"{{ item['avatar']}}","nickname":"{{ item['nickname']}}","content":"{{ item['content'] }}"}{% if n!=1 %},{%set n=n-1 %}{% end %}{% end %}]}

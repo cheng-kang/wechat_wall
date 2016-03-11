@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+	    <title>Wechat Board</title>
+	    <link href="{{ static_url("dist/semantic.min.css") }}" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css" href="{{ static_url("dist/components/icon.css") }}">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body class="pushable">
+	    <div class="pusher">
+	        <div class="full height">
+	            <h1 class="ui center aligned block header">
+	              微信墙上墙窗口
+	              {% if nickname %}
+	              	<a class="ui blue label">{{ nickname }}</a>
+              	{% else %}
+	              	<a class="ui green label">路人甲</a>
+              	{% end %}
+	            </h1>
+	        	<form method="post">
+	    			<div >
+				      <textarea id="content" name="content" style="height:300px;resize: none;"></textarea>
+				    </div>
+	    			<button type="submit" class="positive fluid ui button">发送</button>
+    			</form>
+			</div>	
+   		</div>
+	</body>
+	<script type="text/javascript">
+
+		function setSize(){
+			document.getElementById("content").style.width = window.innerWidth + "px";
+		}
+		setInterval(setSize,500);
+	</script>
+</html>
